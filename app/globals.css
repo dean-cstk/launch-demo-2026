@@ -134,39 +134,13 @@ body {
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
 }
 
+/* Static gradient — do not animate background-position on clipped text (CLS,
+   non-composited paint, mobile Lighthouse regression). */
 .text-gradient {
-  background: linear-gradient(
-    115deg,
-    #c4b5fd 0%,
-    #ffffff 22%,
-    var(--cs-purple) 48%,
-    #6f83f2 72%,
-    #e9d5ff 100%
-  );
-  background-size: 220% 100%;
-  background-position: 0% 50%;
+  background: linear-gradient(135deg, #fff 20%, var(--cs-purple) 58%, #6f83f2 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: text-gradient-flow 12s ease-in-out infinite;
-}
-
-@keyframes text-gradient-flow {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .text-gradient {
-    animation: none;
-    background: linear-gradient(135deg, #fff 20%, var(--cs-purple) 60%, #6f83f2 100%);
-    background-size: 100% 100%;
-  }
 }
 
 .rocket-float {

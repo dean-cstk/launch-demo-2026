@@ -85,7 +85,7 @@ export default function Home() {
 
       <div className="h-12" />
 
-      <main className="relative flex flex-col items-center text-center justify-center flex-1 max-w-4xl w-full">
+      <main className="relative flex min-h-0 w-full max-w-4xl flex-1 flex-col items-center text-center justify-center md:justify-start">
         <div
           className="mb-8 relative isolate mx-auto flex w-full max-w-[280px] min-h-[200px] shrink-0 items-center justify-center md:max-w-[320px] md:min-h-[240px]"
           style={{ contain: 'layout style' }}
@@ -99,7 +99,7 @@ export default function Home() {
           <RocketMark className="rocket-float relative z-10 h-[160px] w-[160px] shrink-0 select-none md:h-[200px] md:w-[200px]" />
         </div>
 
-        <div className="space-y-6 w-full min-h-[19rem] [contain:layout] md:min-h-[21rem]">
+        <div className="w-full space-y-6 [contain:layout] min-h-[18rem] md:min-h-0">
           <div className="inline-flex items-center gap-3 glass px-4 py-1.5 rounded-full text-[10px] font-bold tracking-[0.4em] uppercase text-[#AC75FF]">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75" />
@@ -118,7 +118,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="mt-7 sm:mt-8 flex flex-col sm:flex-row items-center gap-6">
+        <div className="mt-7 flex flex-col items-center gap-6 sm:mt-8 sm:flex-row md:mt-3 lg:mt-4">
           <a
             href="https://www.contentstack.com/docs/developers/apis/launch-api"
             target="_blank"
@@ -136,9 +136,15 @@ export default function Home() {
             Launch Docs
           </a>
         </div>
+
+        {/* Desktop: absorb vertical space below CTAs so buttons sit under copy, not above footer */}
+        <div
+          className="hidden min-h-[20vh] flex-1 md:block lg:min-h-[28vh]"
+          aria-hidden
+        />
       </main>
 
-      <footer className="w-full flex justify-center pb-12 pt-24 md:pt-28">
+      <footer className="flex w-full justify-center pb-12 pt-10 md:pt-12">
         <div className="glass rounded-full px-8 py-3.5 flex items-center gap-4 transition-all duration-500 hover:bg-white/10 hover:border-white/20 group">
           <a
             href="https://www.contentstack.com"
