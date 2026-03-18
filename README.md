@@ -25,8 +25,6 @@ npm run build
 npm start
 ```
 
-After a **successful** build, the terminal prints a little ASCII rocket and a chunky **LAUNCH!** banner (colors unless `NO_COLOR=1`).
-
 Static export (optional): add `output: 'export'` to `next.config.ts`, then `npm run build` — output in `out/`. **Note:** dynamic OG images (`/opengraph-image`) need a server or adapter that supports them; static export may require a different OG strategy.
 
 ## SEO & Open Graph (Slack, LinkedIn, etc.)

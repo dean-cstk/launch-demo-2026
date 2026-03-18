@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node scripts/build-celebration.js",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
