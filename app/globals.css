@@ -8,6 +8,12 @@
   --cs-deep: #050505;
 }
 
+/* System stack only — zero font network/decode on LCP (mobile PSI) */
+html {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
 body {
   background-color: var(--cs-deep);
   color: #ffffff;

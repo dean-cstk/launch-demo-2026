@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
 import { JsonLd } from '@/components/json-ld'
 import {
   getSiteUrl,
@@ -9,22 +8,6 @@ import {
   SEO_TITLE,
 } from '@/lib/site-config'
 import './globals.css'
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-  adjustFontFallback: true,
-  preload: true,
-  fallback: [
-    'ui-sans-serif',
-    'system-ui',
-    '-apple-system',
-    'BlinkMacSystemFont',
-    'Segoe UI',
-    'sans-serif',
-  ],
-})
 
 const siteUrl = getSiteUrl()
 
@@ -120,9 +103,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-sans antialiased`}>
-        <JsonLd />
+      <body className="font-sans antialiased">
         {children}
+        <JsonLd />
       </body>
     </html>
   )
