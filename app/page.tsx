@@ -87,16 +87,10 @@ export default function Home() {
 
       <main className="relative flex min-h-0 w-full max-w-4xl flex-1 flex-col items-center text-center justify-center md:justify-start">
         <div
-          className="mb-8 relative isolate mx-auto flex w-full max-w-[280px] min-h-[200px] shrink-0 items-center justify-center md:max-w-[320px] md:min-h-[240px]"
+          className="relative isolate mx-auto mb-8 flex w-full max-w-[280px] min-h-[160px] shrink-0 items-center justify-center md:max-w-[320px] md:min-h-[200px]"
           style={{ contain: 'layout style' }}
         >
-          <div
-            className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden rounded-full"
-            aria-hidden
-          >
-            <div className="h-40 w-40 scale-[1.35] rounded-full bg-[#AC75FF]/20 blur-[50px] opacity-50 md:h-52 md:w-52 md:scale-[1.4] md:blur-[60px]" />
-          </div>
-          <RocketMark className="rocket-float relative z-10 h-[160px] w-[160px] shrink-0 select-none md:h-[200px] md:w-[200px]" />
+          <RocketMark className="rocket-float h-[160px] w-[160px] shrink-0 select-none md:h-[200px] md:w-[200px]" />
         </div>
 
         <div className="w-full space-y-6 [contain:layout] min-h-[18rem] md:min-h-0">
@@ -118,7 +112,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="mt-7 flex flex-col items-center gap-6 sm:mt-8 sm:flex-row md:mt-3 lg:mt-4">
+        <div className="mt-[60px] flex flex-col items-center gap-6 sm:flex-row">
           <a
             href="https://www.contentstack.com/docs/developers/apis/launch-api"
             target="_blank"
