@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   title: 'Contentstack | Cloud Engine',
   description:
     'High-performance frontend hosting powered by Contentstack Launch.',
+  icons: {
+    icon: [{ url: '/icon.svg', type: 'image/svg+xml' }],
+    apple: '/icon.svg',
+  },
 }
 
 export default function RootLayout({
