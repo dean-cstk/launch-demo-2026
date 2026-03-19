@@ -119,12 +119,12 @@ export default function Home() {
             Crafted for speed. Powered by <span className="text-white font-medium">Contentstack Launch.</span>
           </p>
 
-          <div className="mt-8 flex flex-col items-center justify-center gap-6 sm:flex-row">
+          <div className="mt-8 flex max-w-md w-full flex-col items-stretch justify-center gap-4 pb-10 max-sm:pb-14 sm:max-w-none sm:flex-row sm:items-center sm:gap-6 sm:pb-0">
             <a
               href="https://www.contentstack.com/docs/developers/apis/launch-api"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-10 py-4 bg-black/40 text-white border border-[#AC75FF]/40 rounded-xl font-bold text-sm hover:bg-[#AC75FF] hover:text-black hover:scale-105 hover:border-transparent active:scale-95 transition-all duration-300 shadow-2xl backdrop-blur-md no-underline text-center"
+              className="flex min-h-12 w-full items-center justify-center rounded-xl border border-[#AC75FF]/40 bg-black/40 px-10 py-3.5 text-center text-sm font-bold text-white shadow-2xl backdrop-blur-md no-underline transition-all duration-300 hover:scale-105 hover:border-transparent hover:bg-[#AC75FF] hover:text-black active:scale-95 sm:w-auto touch-manipulation"
             >
               Launch API
             </a>
@@ -132,7 +132,7 @@ export default function Home() {
               href="https://www.contentstack.com/docs/developers/launch"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-10 py-4 bg-black/40 text-white border border-[#AC75FF]/40 rounded-xl font-bold text-sm hover:bg-[#AC75FF] hover:text-black hover:scale-105 hover:border-transparent active:scale-95 transition-all duration-300 shadow-2xl backdrop-blur-md no-underline text-center"
+              className="flex min-h-12 w-full items-center justify-center rounded-xl border border-[#AC75FF]/40 bg-black/40 px-10 py-3.5 text-center text-sm font-bold text-white shadow-2xl backdrop-blur-md no-underline transition-all duration-300 hover:scale-105 hover:border-transparent hover:bg-[#AC75FF] hover:text-black active:scale-95 sm:w-auto touch-manipulation"
             >
               Launch Docs
             </a>
@@ -146,12 +146,12 @@ export default function Home() {
       </main>
 
       <footer className="flex w-full justify-center pb-12 pt-10 md:pt-12">
-        <div className="glass rounded-full px-8 py-3.5 flex items-center gap-4 transition-all duration-500 hover:bg-white/10 hover:border-white/20 group">
+        <div className="glass group flex items-center gap-4 rounded-full px-4 py-2 transition-all duration-500 hover:border-white/20 hover:bg-white/10 sm:gap-3 sm:px-8 sm:py-3.5">
           <a
             href="https://www.contentstack.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-4 no-underline group/brand"
+            className="group/brand flex min-h-12 min-w-12 items-center justify-center gap-3 rounded-full px-3 py-2 no-underline sm:min-h-0 sm:min-w-0 sm:justify-start sm:px-2 sm:py-2.5 touch-manipulation"
           >
             <svg
               width="24"
@@ -194,13 +194,16 @@ export default function Home() {
             </span>
           </a>
 
-          <div className="h-5 w-[1px] bg-white/20 mx-1 shrink-0" />
+          <div
+            className="mx-1 h-8 w-px shrink-0 self-center bg-white/20 sm:h-5"
+            aria-hidden
+          />
 
           <a
             href="https://github.com/dean-cstk/launch-demo-2026"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 no-underline hover:opacity-70 transition-opacity"
+            className="flex min-h-12 min-w-12 items-center justify-center gap-2 rounded-full px-3 py-2 no-underline transition-opacity hover:opacity-70 sm:min-h-0 sm:min-w-0 sm:px-2 sm:py-2.5 touch-manipulation"
           >
             <svg
               fill="white"
