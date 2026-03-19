@@ -85,57 +85,56 @@ export default function Home() {
 
       <div className="h-12" />
 
-      <main className="relative flex min-h-0 w-full max-w-4xl flex-1 flex-col items-center text-center justify-center md:justify-start">
+      <main className="relative z-10 flex min-h-0 w-full max-w-4xl flex-1 flex-col items-center justify-start overflow-y-auto text-center pt-4 sm:pt-8">
         <div
-          className="relative isolate mx-auto mb-8 flex w-full max-w-[280px] min-h-[160px] shrink-0 items-center justify-center md:max-w-[320px] md:min-h-[200px]"
+          className="relative isolate mx-auto mb-6 flex w-full max-w-[280px] min-h-[160px] shrink-0 items-center justify-center md:mb-8 md:max-w-[320px] md:min-h-[200px]"
           style={{ contain: 'layout style' }}
         >
           <RocketMark className="rocket-float h-[160px] w-[160px] shrink-0 select-none md:h-[200px] md:w-[200px]" />
         </div>
 
-        <div className="w-full space-y-6 [contain:layout] min-h-[18rem] md:min-h-0">
-          <div className="inline-flex items-center gap-3 glass px-4 py-1.5 rounded-full text-[10px] font-bold tracking-[0.4em] uppercase text-[#AC75FF]">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500" />
-            </span>
-            Deployment Successful
+        {/* Single column: copy then CTAs so buttons always sit below text */}
+        <div className="flex w-full max-w-2xl flex-col items-center gap-8 px-2 pb-8 sm:gap-10 sm:px-0">
+          <div className="flex w-full flex-col items-center space-y-6">
+            <div className="inline-flex items-center gap-3 glass px-4 py-1.5 rounded-full text-[10px] font-bold tracking-[0.4em] uppercase text-[#AC75FF]">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500" />
+              </span>
+              Deployment Successful
+            </div>
+            <h1 className="text-6xl font-extrabold tracking-tighter leading-none md:text-8xl">
+              Hello <span className="text-gradient">Composable.</span>
+            </h1>
+            <p className="max-w-xl text-sm font-light leading-relaxed text-gray-400 opacity-90 md:text-lg">
+              You are witnessing the future of high-performance frontend hosting.{' '}
+              <br className="hidden md:block" />
+              Crafted for speed. Powered by{' '}
+              <span className="font-medium text-white">Contentstack Launch.</span>
+            </p>
           </div>
-          <h1 className="text-6xl md:text-8xl font-extrabold tracking-tighter leading-none">
-            Hello <span className="text-gradient">Composable.</span>
-          </h1>
-          <p className="text-gray-400 text-sm md:text-lg max-w-xl mx-auto leading-relaxed font-light opacity-90">
-            You are witnessing the future of high-performance frontend hosting.{' '}
-            <br className="hidden md:block" />
-            Crafted for speed. Powered by{' '}
-            <span className="text-white font-medium">Contentstack Launch.</span>
-          </p>
+
+          <div className="flex w-full max-w-md flex-col items-stretch gap-4 sm:max-w-none sm:flex-row sm:items-center sm:justify-center">
+            <a
+              href="https://www.contentstack.com/docs/developers/apis/launch-api"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full shrink-0 rounded-xl border border-[#AC75FF]/40 bg-black/40 px-10 py-4 text-center text-sm font-bold text-white shadow-2xl backdrop-blur-md no-underline transition-all duration-300 hover:scale-105 hover:border-transparent hover:bg-[#AC75FF] hover:text-black active:scale-95 sm:w-auto"
+            >
+              Launch API
+            </a>
+            <a
+              href="https://www.contentstack.com/docs/developers/launch"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full shrink-0 rounded-xl border border-[#AC75FF]/40 bg-black/40 px-10 py-4 text-center text-sm font-bold text-white shadow-2xl backdrop-blur-md no-underline transition-all duration-300 hover:scale-105 hover:border-transparent hover:bg-[#AC75FF] hover:text-black active:scale-95 sm:w-auto"
+            >
+              Launch Docs
+            </a>
+          </div>
         </div>
 
-        <div className="mt-[60px] flex flex-col items-center gap-6 sm:flex-row">
-          <a
-            href="https://www.contentstack.com/docs/developers/apis/launch-api"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto px-10 py-4 bg-black/40 text-white border border-[#AC75FF]/40 rounded-xl font-bold text-sm hover:bg-[#AC75FF] hover:text-black hover:scale-105 hover:border-transparent active:scale-95 transition-all duration-300 shadow-2xl backdrop-blur-md no-underline text-center"
-          >
-            Launch API
-          </a>
-          <a
-            href="https://www.contentstack.com/docs/developers/launch"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto px-10 py-4 bg-black/40 text-white border border-[#AC75FF]/40 rounded-xl font-bold text-sm hover:bg-[#AC75FF] hover:text-black hover:scale-105 hover:border-transparent active:scale-95 transition-all duration-300 shadow-2xl backdrop-blur-md no-underline text-center"
-          >
-            Launch Docs
-          </a>
-        </div>
-
-        {/* Desktop: absorb vertical space below CTAs so buttons sit under copy, not above footer */}
-        <div
-          className="hidden min-h-[20vh] flex-1 md:block lg:min-h-[28vh]"
-          aria-hidden
-        />
+        <div className="min-h-[12vh] flex-1 md:min-h-[20vh] lg:min-h-[24vh]" aria-hidden />
       </main>
 
       <footer className="flex w-full justify-center pb-12 pt-10 md:pt-12">
