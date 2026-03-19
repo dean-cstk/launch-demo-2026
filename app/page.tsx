@@ -85,66 +85,73 @@ export default function Home() {
 
       <div className="h-12" />
 
-      <main className="relative flex flex-col items-center text-center justify-center flex-1 max-w-4xl w-full">
+      <main className="relative flex min-h-0 w-full max-w-4xl flex-1 flex-col items-center text-center justify-center md:justify-start">
         <div
-          className="mb-8 relative isolate mx-auto flex w-full max-w-[280px] min-h-[200px] shrink-0 items-center justify-center md:max-w-[320px] md:min-h-[240px]"
+          className="relative isolate mx-auto mb-8 flex w-full max-w-[280px] min-h-[160px] shrink-0 items-center justify-center md:max-w-[320px] md:min-h-[200px]"
           style={{ contain: 'layout style' }}
         >
-          <div
-            className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden rounded-full"
-            aria-hidden
+          <svg
+            viewBox="0 -960 960 960"
+            className="rocket-float h-[160px] w-[160px] shrink-0 select-none md:h-[200px] md:w-[200px]"
+            fill="#AC75FF"
+            aria-hidden="true"
+            focusable="false"
           >
-            <div className="h-40 w-40 scale-[1.35] rounded-full bg-[#AC75FF]/20 blur-[50px] opacity-50 md:h-52 md:w-52 md:scale-[1.4] md:blur-[60px]" />
-          </div>
-          <RocketMark className="rocket-float relative z-10 h-[160px] w-[160px] shrink-0 select-none md:h-[200px] md:w-[200px]" />
+            <path d="m226-559 78 33q14-28 29-54t33-52l-56-11-84 84Zm142 83 114 113q42-16 90-49t90-75q70-70 109.5-155.5T806-800q-72-5-158 34.5T492-656q-42 42-75 90t-49 90Zm155-121.5q0-33.5 23-56.5t57-23q34 0 57 23t23 56.5q0 33.5-23 56.5t-57 23q-34 0-57-23t-23-56.5ZM565-220l84-84-11-56q-26 18-52 32.5T532-299l33 79Zm313-653q19 121-23.5 235.5T708-419l20 99q4 20-2 39t-20 33L538-80l-84-197-171-171-197-84 167-168q14-14 33.5-20t39.5-2l99 20q104-104 218-147t235-24ZM157-321q35-35 85.5-35.5T328-322q35 35 34.5 85.5T327-151q-25 25-83.5 43T82-76q14-103 32-161.5t43-83.5Zm57 56q-10 10-20 36.5T180-175q27-4 53.5-13.5T270-208q12-12 13-29t-11-29q-12-12-29-11.5T214-265Z"/>
+          </svg>
         </div>
 
-        <div className="space-y-6">
+        <div className="w-full space-y-6 [contain:layout] min-h-[18rem] md:min-h-0">
           <div className="inline-flex items-center gap-3 glass px-4 py-1.5 rounded-full text-[10px] font-bold tracking-[0.4em] uppercase text-[#AC75FF]">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
             </span>
             Deployment Successful
           </div>
+
           <h1 className="text-6xl md:text-8xl font-extrabold tracking-tighter leading-none">
             Hello <span className="text-gradient">Composable.</span>
           </h1>
+
           <p className="text-gray-400 text-sm md:text-lg max-w-xl mx-auto leading-relaxed font-light opacity-90">
-            You are witnessing the future of high-performance frontend hosting.{' '}
-            <br className="hidden md:block" />
-            Crafted for speed. Powered by{' '}
-            <span className="text-white font-medium">Contentstack Launch.</span>
+            You are witnessing the future of high-performance frontend hosting.<br className="hidden md:block"/>
+            Crafted for speed. Powered by <span className="text-white font-medium">Contentstack Launch.</span>
           </p>
+
+          <div className="mt-8 flex max-w-md w-full flex-col items-stretch justify-center gap-4 pb-10 max-sm:pb-14 sm:max-w-none sm:flex-row sm:items-center sm:gap-6 sm:pb-0">
+            <a
+              href="https://www.contentstack.com/docs/developers/apis/launch-api"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex min-h-12 w-full items-center justify-center rounded-xl border border-[#AC75FF]/40 bg-black/40 px-10 py-3.5 text-center text-sm font-bold text-white shadow-2xl backdrop-blur-md no-underline transition-all duration-300 hover:scale-105 hover:border-transparent hover:bg-[#AC75FF] hover:text-black active:scale-95 sm:w-auto touch-manipulation"
+            >
+              Launch API
+            </a>
+            <a
+              href="https://www.contentstack.com/docs/developers/launch"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex min-h-12 w-full items-center justify-center rounded-xl border border-[#AC75FF]/40 bg-black/40 px-10 py-3.5 text-center text-sm font-bold text-white shadow-2xl backdrop-blur-md no-underline transition-all duration-300 hover:scale-105 hover:border-transparent hover:bg-[#AC75FF] hover:text-black active:scale-95 sm:w-auto touch-manipulation"
+            >
+              Launch Docs
+            </a>
+          </div>
         </div>
 
-        <div className="mt-14 flex flex-col sm:flex-row items-center gap-6">
-          <a
-            href="https://www.contentstack.com/docs/developers/apis/launch-api"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto px-10 py-4 bg-black/40 text-white border border-[#AC75FF]/40 rounded-xl font-bold text-sm hover:bg-[#AC75FF] hover:text-black hover:scale-105 hover:border-transparent active:scale-95 transition-all duration-300 shadow-2xl backdrop-blur-md no-underline text-center"
-          >
-            Launch API
-          </a>
-          <a
-            href="https://www.contentstack.com/docs/developers/launch"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto px-10 py-4 bg-black/40 text-white border border-[#AC75FF]/40 rounded-xl font-bold text-sm hover:bg-[#AC75FF] hover:text-black hover:scale-105 hover:border-transparent active:scale-95 transition-all duration-300 shadow-2xl backdrop-blur-md no-underline text-center"
-          >
-            Launch Docs
-          </a>
-        </div>
+        <div
+          className="hidden min-h-[20vh] flex-1 md:block lg:min-h-[28vh]"
+          aria-hidden="true"
+        ></div>
       </main>
 
-      <footer className="w-full flex justify-center pb-12 pt-16">
-        <div className="glass rounded-full px-8 py-3.5 flex items-center gap-4 transition-all duration-500 hover:bg-white/10 hover:border-white/20 group">
+      <footer className="flex w-full justify-center pb-12 pt-10 md:pt-12">
+        <div className="glass group flex items-center gap-4 rounded-full px-4 py-2 transition-all duration-500 hover:border-white/20 hover:bg-white/10 sm:gap-3 sm:px-8 sm:py-3.5">
           <a
             href="https://www.contentstack.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-4 no-underline group/brand"
+            className="group/brand flex min-h-12 min-w-12 items-center justify-center gap-3 rounded-full px-3 py-2 no-underline sm:min-h-0 sm:min-w-0 sm:justify-start sm:px-2 sm:py-2.5 touch-manipulation"
           >
             <svg
               width="24"
@@ -187,13 +194,16 @@ export default function Home() {
             </span>
           </a>
 
-          <div className="h-5 w-[1px] bg-white/20 mx-1 shrink-0" />
+          <div
+            className="mx-1 h-8 w-px shrink-0 self-center bg-white/20 sm:h-5"
+            aria-hidden
+          />
 
           <a
-            href="https://github.com/systemsconsciousness/launch-demo-2026"
+            href="https://github.com/dean-cstk/launch-demo-2026"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 no-underline hover:opacity-70 transition-opacity"
+            className="flex min-h-12 min-w-12 items-center justify-center gap-2 rounded-full px-3 py-2 no-underline transition-opacity hover:opacity-70 sm:min-h-0 sm:min-w-0 sm:px-2 sm:py-2.5 touch-manipulation"
           >
             <svg
               fill="white"

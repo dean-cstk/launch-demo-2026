@@ -9,8 +9,18 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   compress: true,
   experimental: {
-    // Inlines app CSS into <style> — removes render-blocking CSS link (major mobile PSI win)
     inlineCss: true,
+  },
+  webpack: (config, { isServer, webpack: wp }) => {
+    if (!isServer) {
+      config.plugins!.push(
+        new wp.NormalModuleReplacementPlugin(
+          /polyfills[/\\]polyfill-module\.js$/,
+          path.join(__dirname, 'lib/modern-client-polyfill.js')
+        )
+      )
+    }
+    return config
   },
 }
 
