@@ -25,7 +25,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 ENV_FILE = REPO_ROOT / ".env.lighthouse"
-DEFAULT_REPO = "systemsconsciousness/launch-demo-2026"
+DEFAULT_REPO = "dean-cstk/launch-demo-2026"
 
 
 def load_env() -> dict:
