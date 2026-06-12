@@ -21,3 +21,6 @@ dist
 
 # debug
 npm-debug.log*
+
+# Lighthouse AI fix config (contains GitHub PAT — never commit)
+.env.lighthouse
