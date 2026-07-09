@@ -1,4 +1,5 @@
 import { RocketMark } from '@/components/rocket-mark'
+import { StackConnectionButton } from '@/components/stack-connection'
 
 const MANDALA_PETALS = [
   0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330,
@@ -6,7 +7,7 @@ const MANDALA_PETALS = [
 
 export default function Home() {
   return (
-    <div className="page-root p-12 selection:bg-purple-500 selection:text-white">
+    <div className="page-root p-12 selection:bg-[#49A466] selection:text-white">
       <div className="space-container">
         <div className="starfield" />
         <div className="warp-tunnel" />
@@ -23,7 +24,7 @@ export default function Home() {
                 cy="100"
                 r="90"
                 fill="none"
-                stroke="var(--cs-purple)"
+                stroke="var(--cs-green)"
                 strokeWidth="0.35"
                 strokeOpacity={0.45}
                 strokeDasharray="0.5 2"
@@ -40,7 +41,7 @@ export default function Home() {
                 <path
                   key={deg}
                   d="M100 10 L110 30 L90 30 Z"
-                  fill="var(--cs-purple)"
+                  fill="var(--cs-green)"
                   opacity="0.1"
                   transform={`rotate(${deg} 100 100)`}
                 />
@@ -64,7 +65,7 @@ export default function Home() {
                 width="80"
                 height="80"
                 fill="none"
-                stroke="var(--cs-purple)"
+                stroke="var(--cs-green)"
                 strokeWidth="0.1"
                 opacity="0.2"
                 transform="rotate(15 100 100)"
@@ -93,7 +94,7 @@ export default function Home() {
           <svg
             viewBox="0 -960 960 960"
             className="rocket-float h-[160px] w-[160px] shrink-0 select-none md:h-[200px] md:w-[200px]"
-            fill="#AC75FF"
+            fill="#49A466"
             aria-hidden="true"
             focusable="false"
           >
@@ -102,10 +103,10 @@ export default function Home() {
         </div>
 
         <div className="w-full space-y-6 [contain:layout] min-h-[18rem] md:min-h-0">
-          <div className="inline-flex items-center gap-3 glass px-4 py-1.5 rounded-full text-[10px] font-bold tracking-[0.4em] uppercase text-[#AC75FF]">
+          <div className="inline-flex items-center gap-3 glass px-4 py-1.5 rounded-full text-[10px] font-bold tracking-[0.4em] uppercase text-[#49A466]">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#49A466] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#49A466]"></span>
             </span>
             Deployment Successful
           </div>
@@ -124,7 +125,7 @@ export default function Home() {
               href="https://www.contentstack.com/docs/developers/apis/launch-api"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex min-h-12 w-full items-center justify-center rounded-xl border border-[#AC75FF]/40 bg-black/40 px-10 py-3.5 text-center text-sm font-bold text-white shadow-2xl backdrop-blur-md no-underline transition-all duration-300 hover:scale-105 hover:border-transparent hover:bg-[#AC75FF] hover:text-black active:scale-95 sm:w-auto touch-manipulation"
+              className="flex min-h-12 w-full items-center justify-center rounded-xl border border-[#49A466]/40 bg-black/40 px-10 py-3.5 text-center text-sm font-bold text-white shadow-2xl backdrop-blur-md no-underline transition-all duration-300 hover:scale-105 hover:border-transparent hover:bg-[#49A466] hover:text-black active:scale-95 sm:w-auto touch-manipulation"
             >
               Launch API
             </a>
@@ -132,10 +133,11 @@ export default function Home() {
               href="https://www.contentstack.com/docs/developers/launch"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex min-h-12 w-full items-center justify-center rounded-xl border border-[#AC75FF]/40 bg-black/40 px-10 py-3.5 text-center text-sm font-bold text-white shadow-2xl backdrop-blur-md no-underline transition-all duration-300 hover:scale-105 hover:border-transparent hover:bg-[#AC75FF] hover:text-black active:scale-95 sm:w-auto touch-manipulation"
+              className="flex min-h-12 w-full items-center justify-center rounded-xl border border-[#49A466]/40 bg-black/40 px-10 py-3.5 text-center text-sm font-bold text-white shadow-2xl backdrop-blur-md no-underline transition-all duration-300 hover:scale-105 hover:border-transparent hover:bg-[#49A466] hover:text-black active:scale-95 sm:w-auto touch-manipulation"
             >
               Launch Docs
             </a>
+            <StackConnectionButton />
           </div>
         </div>
 
@@ -189,7 +191,7 @@ export default function Home() {
                 </linearGradient>
               </defs>
             </svg>
-            <span className="font-bold text-lg tracking-tight text-white group-hover/brand:text-[#AC75FF] transition-colors">
+            <span className="font-bold text-lg tracking-tight text-white group-hover/brand:text-[#49A466] transition-colors">
               Contentstack
             </span>
           </a>

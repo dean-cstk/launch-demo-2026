@@ -25,7 +25,7 @@ export function OgCard() {
           width: '55%',
           height: '90%',
           background:
-            'radial-gradient(ellipse at center, rgba(172, 117, 255, 0.35) 0%, rgba(140, 26, 246, 0.12) 40%, transparent 70%)',
+            'radial-gradient(ellipse at center, rgba(73, 164, 102, 0.35) 0%, rgba(30, 100, 60, 0.12) 40%, transparent 70%)',
           display: 'flex',
         }}
       />
@@ -61,7 +61,7 @@ export function OgCard() {
             fontSize: 13,
             letterSpacing: '0.35em',
             textTransform: 'uppercase',
-            color: '#AC75FF',
+            color: '#49A466',
             fontWeight: 700,
             marginBottom: 20,
           }}
@@ -79,7 +79,7 @@ export function OgCard() {
           }}
         >
           Hello{' '}
-          <span style={{ color: '#AC75FF' }}>Composable.</span>
+          <span style={{ color: '#49A466' }}>Composable.</span>
         </div>
         <div
           style={{
@@ -108,7 +108,7 @@ export function OgCard() {
               width: 10,
               height: 10,
               borderRadius: 5,
-              background: '#AC75FF',
+              background: '#49A466',
             }}
           />
           <span
@@ -135,7 +135,7 @@ export function OgCard() {
         }}
       >
         <svg width="300" height="300" viewBox="0 -960 960 960">
-          <path d={ROCKET_SVG_PATH} fill="#8C1AF6" />
+          <path d={ROCKET_SVG_PATH} fill="#49A466" />
         </svg>
       </div>
       {/* Bottom bar */}

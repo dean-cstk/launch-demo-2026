@@ -13,7 +13,7 @@ export function RocketMark({ className, 'aria-hidden': ariaHidden = true }: Prop
     <svg
       viewBox="0 -960 960 960"
       className={className}
-      fill="#AC75FF"
+      fill="#49A466"
       aria-hidden={ariaHidden}
       focusable="false"
     >
