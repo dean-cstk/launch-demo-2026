@@ -92,15 +92,23 @@ async function cdaFetch(
   }
 
   if (!res.ok) {
-    let detail = ''
     const rawBody = await res.text()
+    let body: any = null
     try {
-      const body = JSON.parse(rawBody)
-      detail = typeof body?.error_message === 'string' ? ` ${body.error_message}` : ''
+      body = JSON.parse(rawBody)
     } catch {
-      const snippet = rawBody.trim().slice(0, 200)
-      if (snippet) detail = ` Non-JSON response from ${url.hostname}: "${snippet}"`
     }
+
+    if (body === null) {
+      const snippet = rawBody.trim().slice(0, 200)
+      throw new Error(
+        `Contentstack CDN host rejected the request before it reached the API (got a non-JSON ${res.status} response${
+          snippet ? `: "${snippet}"` : ''
+        }). This usually means CONTENTSTACK_CDN is missing the API version path — it should look like cdn.contentstack.io/v3, not just cdn.contentstack.io.`
+      )
+    }
+
+    const detail = typeof body?.error_message === 'string' ? ` ${body.error_message}` : ''
 
     if (res.status === 412) {
       throw new Error(`Contentstack rejected the API key.${detail} Check CONTENTSTACK_API_KEY.`)
