@@ -93,10 +93,13 @@ async function cdaFetch(
 
   if (!res.ok) {
     let detail = ''
+    const rawBody = await res.text()
     try {
-      const body = await res.json()
+      const body = JSON.parse(rawBody)
       detail = typeof body?.error_message === 'string' ? ` ${body.error_message}` : ''
     } catch {
+      const snippet = rawBody.trim().slice(0, 200)
+      if (snippet) detail = ` Non-JSON response from ${url.hostname}: "${snippet}"`
     }
 
     if (res.status === 412) {
