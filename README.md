@@ -21,7 +21,13 @@ Ensure you have Node.js 18+ installed.
 
 npm install  
 cp .env.example .env.local  
-\# Set NEXT\_PUBLIC\_SITE\_URL to your public URL (see SEO below)
+# Set NEXT_PUBLIC_SITE_URL to your public URL (see SEO below)
+# Set the CONTENTSTACK_* values when using the My Stack connection check
+
+The Contentstack variables are server-only and must be configured in the environment
+where the Next.js server runs. After adding or changing them locally, restart `npm run dev`.
+For Launch or another host, add them to the deployment environment and redeploy the app;
+changing variables in the hosting dashboard does not update an already-running deployment.
 
 ### **Development**
 

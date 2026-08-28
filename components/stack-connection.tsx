@@ -57,13 +57,14 @@ export function StackConnectionButton() {
       <button
         type="button"
         onClick={handleOpen}
+        aria-label={state.status === 'success' ? 'Connected to Contentstack' : 'Connect to Contentstack'}
         className="flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border border-[#49A466]/40 bg-black/40 px-10 py-3.5 text-center text-sm font-bold text-white shadow-2xl backdrop-blur-md transition-all duration-300 hover:scale-105 hover:border-transparent hover:bg-[#49A466] hover:text-black active:scale-95 sm:w-auto touch-manipulation"
       >
         <span className="relative flex h-2 w-2 shrink-0">
-          <span className="absolute inline-flex h-full w-full rounded-full bg-[#49A466] opacity-75" />
-          <span className="relative inline-flex h-2 w-2 rounded-full bg-[#49A466]" />
+          <span className={`absolute inline-flex h-full w-full rounded-full opacity-75 ${state.status === 'success' ? 'bg-[#49A466]' : 'bg-white/40'}`} />
+          <span className={`relative inline-flex h-2 w-2 rounded-full ${state.status === 'success' ? 'bg-[#49A466]' : 'bg-white/40'}`} />
         </span>
-        My Stack
+        {state.status === 'success' ? 'Connected' : 'Connect to stack'}
       </button>
 
       {open && (

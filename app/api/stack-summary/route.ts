@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server'
 import { fetchStackSummary, readStackConfig } from '@/lib/contentstack'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET() {
   const configResult = readStackConfig()
 
