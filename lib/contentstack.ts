@@ -22,12 +22,26 @@ const REQUIRED_ENV_VARS = [
   'CONTENTSTACK_ENVIRONMENT',
 ] as const
 
+function readEnv(name: string): string | undefined {
+  const value = process.env[name]?.trim()
+  if (!value) return undefined
+
+  if (
+    (value.startsWith('"') && value.endsWith('"')) ||
+    (value.startsWith("'") && value.endsWith("'"))
+  ) {
+    return value.slice(1, -1).trim() || undefined
+  }
+
+  return value
+}
+
 export function readStackConfig(): StackConfigResult {
-  const cdnHost = process.env.CONTENTSTACK_CDN?.trim()
-  const apiKey = process.env.CONTENTSTACK_API_KEY?.trim()
-  const deliveryToken = process.env.CONTENTSTACK_DELIVERY_TOKEN?.trim()
-  const environment = process.env.CONTENTSTACK_ENVIRONMENT?.trim()
-  const apiHost = process.env.CONTENTSTACK_API_HOST?.trim()
+  const cdnHost = readEnv('CONTENTSTACK_CDN')
+  const apiKey = readEnv('CONTENTSTACK_API_KEY')
+  const deliveryToken = readEnv('CONTENTSTACK_DELIVERY_TOKEN')
+  const environment = readEnv('CONTENTSTACK_ENVIRONMENT')
+  const apiHost = readEnv('CONTENTSTACK_API_HOST')
 
   const values = { CONTENTSTACK_CDN: cdnHost, CONTENTSTACK_API_KEY: apiKey, CONTENTSTACK_DELIVERY_TOKEN: deliveryToken, CONTENTSTACK_ENVIRONMENT: environment }
   const missing = REQUIRED_ENV_VARS.filter((name) => !values[name as keyof typeof values])
@@ -78,8 +92,18 @@ async function cdaFetch(
   }
 
   if (!res.ok) {
+    let detail = ''
+    try {
+      const body = await res.json()
+      detail = typeof body?.error_message === 'string' ? ` ${body.error_message}` : ''
+    } catch {
+    }
+
+    if (res.status === 412) {
+      throw new Error(`Contentstack rejected the API key.${detail} Check CONTENTSTACK_API_KEY.`)
+    }
     if (res.status === 401 || res.status === 403) {
-      throw new Error('Contentstack rejected the credentials. Check CONTENTSTACK_API_KEY and CONTENTSTACK_DELIVERY_TOKEN.')
+      throw new Error(`Contentstack rejected the delivery token or its environment.${detail} Check CONTENTSTACK_DELIVERY_TOKEN and CONTENTSTACK_ENVIRONMENT.`)
     }
     if (res.status === 404) {
       throw new Error('Contentstack stack or environment not found. Check CONTENTSTACK_ENVIRONMENT and CONTENTSTACK_CDN.')
